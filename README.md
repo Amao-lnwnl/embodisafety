@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="assets/logo.png" alt="EmbodiSafety" width="900">
+</p>
+
+**English** · [中文](README.zh-CN.md)
+
 # ✨ EmbodiSafety
 
 *EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI* · [🔗 Project page](https://embodisafety.github.io/)
