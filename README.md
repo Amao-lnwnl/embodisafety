@@ -2,11 +2,19 @@
   <img src="assets/logo.png" alt="EmbodiSafety" width="900">
 </p>
 
-**English** · [中文](README.zh-CN.md)
+<p align="center">
+  <a href="https://embodisafety.github.io/">[🌐 Project Page]</a>
+  <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">[🤗 HF Dataset]</a>
+  [📄 Paper]
+</p>
+
+<p align="center">
+  <a href="README.zh-CN.md">Switch to 中文</a>
+</p>
 
 # ✨ EmbodiSafety
 
-*EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI* · [🔗 Project page](https://embodisafety.github.io/)
+*EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI*
 
 ## 🧭 Benchmark and response modes
 
@@ -79,3 +87,8 @@ Cumulative accuracy (%) on Snapshot (1,092 tasks) and Trajectory (540 tasks). **
 | Hy-Embodied-VLM-1.0 | 57.3 | 51.3 | 33.5 | 29.6 | 23.5 | 16.9 |
 | RoboBrain2.0-7B | 37.6 | 31.9 | 19.6 | 14.6 | 13.3 | 9.6 |
 | RoboBrain2.0-3B | 21.2 | 14.8 | 5.3 | 15.7 | 8.9 | 5.0 |
+
+
+```bibtex
+
+```

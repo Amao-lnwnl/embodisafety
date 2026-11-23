@@ -2,11 +2,19 @@
   <img src="assets/logo.png" alt="EmbodiSafety" width="900">
 </p>
 
-[English](README.md) · **中文**
+<p align="center">
+  <a href="https://embodisafety.github.io/">[🌐 项目主页]</a>
+  <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">[🤗 HF 数据集]</a>
+  [📄 论文]
+</p>
+
+<p align="center">
+  <a href="README.md">Switch to English</a>
+</p>
 
 # ✨ EmbodiSafety
 
-*EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI* · [🔗 项目主页](https://embodisafety.github.io/)
+*EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI*
 
 ## 🧭 Benchmark 定义与响应模式
 
@@ -79,3 +87,8 @@ Snapshot（1,092 条）与 Trajectory（540 条）的累计准确率（%）。**
 | Hy-Embodied-VLM-1.0 | 57.3 | 51.3 | 33.5 | 29.6 | 23.5 | 16.9 |
 | RoboBrain2.0-7B | 37.6 | 31.9 | 19.6 | 14.6 | 13.3 | 9.6 |
 | RoboBrain2.0-3B | 21.2 | 14.8 | 5.3 | 15.7 | 8.9 | 5.0 |
+
+
+```bibtex
+
+```
