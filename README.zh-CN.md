@@ -12,6 +12,10 @@
   <a href="README.md">Switch to English</a>
 </p>
 
+<p align="center">
+  <img src="assets/leaderboard.png" alt="EmbodiSafety 排行榜：Snapshot 和 Trajectory 的 L3 准确率" width="1000">
+</p>
+
 # ✨ EmbodiSafety
 
 *EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI*

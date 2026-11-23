@@ -12,6 +12,10 @@
   <a href="README.zh-CN.md">Switch to 中文</a>
 </p>
 
+<p align="center">
+  <img src="assets/leaderboard.png" alt="EmbodiSafety leaderboard comparing Snapshot and Trajectory L3 accuracy" width="1000">
+</p>
+
 # ✨ EmbodiSafety
 
 *EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI*
