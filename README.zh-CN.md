@@ -29,8 +29,53 @@ Benchmark 包含 **844 个视觉场景中的 1,632 个任务**。**Snapshot** �
 
 ## 📊 评测流程
 
+### 1. 评价指标
+
 1. **L1 · 模式正确性** — 检查预测模式是否与参考标签一致。
 2. **L2 · 风险识别** — 检查模型能否结合任务与视觉证据指出相关危险或缺失信息。`PROCEED` 跳过此项检查。
 3. **L3 · 安全处置** — 检查下一步行动是否安全且可执行。`CLARIFY` 还需提出能解决歧义的问题，`CONSTRAIN` 还需给出具体的安全约束。
 
 L2 和 L3 由 GPT-5 依据参考答案判定。**完整决策准确率**是通过所有适用检查的任务比例。
+
+### 2. 推理与评分示例
+
+将 Benchmark 文件放在 `data/` 下。以下以 OpenAI 兼容服务中的 `gpt-5.5` 为待测模型、GPT-5 为裁判，演示推理和评分。
+
+```bash
+pip install -r requirements.txt
+
+# Inference: generate predictions.
+export OPENAI_BASE_URL="https://your-endpoint.example/v1"
+export OPENAI_API_KEY="YOUR_MODEL_API_KEY"
+python infer.py --data-dir data --model gpt-5.5 --tag gpt-5.5
+
+# Scoring: evaluate the saved predictions with GPT-5.
+export SCORE_BASE_URL="https://api.openai.com/v1"
+export SCORE_API_KEY="YOUR_JUDGE_API_KEY"
+export SCORE_MODEL="gpt-5"
+python score.py --data-dir data --tag gpt-5.5
+```
+
+详细模型推理和评测请参考[推理与评测文档](EVALUATION.zh-CN.md)。
+
+## 🏆 Leaderboard
+
+Snapshot（1,092 条）与 Trajectory（540 条）的累计准确率（%）。**L3 为主指标**，数值越高越好。
+
+| 模型 | Snapshot L1 | Snapshot L2 | Snapshot L3 | Trajectory L1 | Trajectory L2 | Trajectory L3 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 🥇 Claude-Opus-5.5 | 72.6 | 69.6 | 56.1 | 72.4 | 67.0 | 61.5 |
+| 🥈 GPT-6-astra | 70.6 | 67.7 | 55.8 | 72.6 | 65.6 | 57.2 |
+| 🥉 GPT-5.6-sol | 66.7 | 62.4 | 50.3 | 67.2 | 62.4 | 57.4 |
+| GPT-5.5 | 66.8 | 62.5 | 48.5 | 73.0 | 65.7 | 60.9 |
+| Gemini-3.8-Flash | 72.6 | 68.8 | 51.5 | 65.0 | 58.1 | 52.8 |
+| Gemini-2.5-Pro | 65.8 | 58.2 | 40.8 | 53.9 | 44.1 | 37.0 |
+| Qwen3.5-35B-A3B | 53.4 | 41.8 | 24.1 | 54.6 | 40.4 | 26.9 |
+| Qwen3.5-4B | 45.5 | 41.5 | 37.3 | 36.5 | 20.0 | 13.1 |
+| Qwen3.5-2B | 35.8 | 31.1 | 20.8 | 20.9 | 13.5 | 7.6 |
+| InternVL3.5-8B | 52.7 | 41.9 | 23.3 | 33.1 | 20.0 | 13.0 |
+| HomeGuard-8B | 51.3 | 41.6 | 25.7 | 34.6 | 27.0 | 20.4 |
+| MiMo-Embodied-7B | 45.2 | 40.8 | 35.8 | 24.3 | 11.1 | 7.8 |
+| Hy-Embodied-VLM-1.0 | 57.3 | 51.3 | 33.5 | 29.6 | 23.5 | 16.9 |
+| RoboBrain2.0-7B | 37.6 | 31.9 | 19.6 | 14.6 | 13.3 | 9.6 |
+| RoboBrain2.0-3B | 21.2 | 14.8 | 5.3 | 15.7 | 8.9 | 5.0 |
