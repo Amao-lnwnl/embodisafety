@@ -9,10 +9,9 @@
   <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">数据集</a> |
   <a href="EVALUATION.zh-CN.md">评测文档</a> |
   <a href="#-leaderboard">排行榜</a> |
-  论文
+  论文 |
+  <a href="README.md">English</a>
 </h2>
-
-<p align="center"><a href="README.md">English</a></p>
 
 <p align="center">
   <img src="assets/leaderboard.png" alt="EmbodiSafety 排行榜：Snapshot 和 Trajectory 的 L3 准确率" width="1000">
@@ -36,6 +35,22 @@
 | [模型推理](EVALUATION.zh-CN.md#推理) | 使用 OpenAI 兼容 API 或通过 vLLM 部署的模型生成预测。 |
 | [评分](EVALUATION.zh-CN.md#评分) | 对已保存的预测运行裁判模型并计算评测指标。 |
 | [预测文件](EVALUATION.zh-CN.md#预测文件) | 查看预测结果的保存位置与文件格式。 |
+
+## 🗂️ 仓库结构
+
+```text
+embodisafety/
+├── README.md
+├── README.zh-CN.md
+├── EVALUATION.md
+├── EVALUATION.zh-CN.md
+├── assets/logo.png
+├── infer.py
+├── score.py
+├── common.py
+├── requirements.txt
+└── prompts/
+```
 
 ## 🧭 Benchmark 定义与响应模式
 

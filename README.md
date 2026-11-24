@@ -9,10 +9,9 @@
   <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">Dataset</a> |
   <a href="EVALUATION.md">Evaluation Guide</a> |
   <a href="#-leaderboard">Leaderboard</a> |
-  Paper
+  Paper |
+  <a href="README.zh-CN.md">中文</a>
 </h2>
-
-<p align="center"><a href="README.zh-CN.md">中文</a></p>
 
 <p align="center">
   <img src="assets/leaderboard.png" alt="EmbodiSafety leaderboard comparing Snapshot and Trajectory L3 accuracy" width="1000">
@@ -36,6 +35,22 @@
 | [Model inference](EVALUATION.md#inference) | Generate predictions with an OpenAI-compatible API or a model served via vLLM. |
 | [Scoring](EVALUATION.md#evaluation) | Run the judge and compute the benchmark metrics from saved predictions. |
 | [Prediction files](EVALUATION.md#prediction-files) | Locate the generated outputs and inspect their format. |
+
+## 🗂️ Repository Structure
+
+```text
+embodisafety/
+├── README.md
+├── README.zh-CN.md
+├── EVALUATION.md      # Input/output format and evaluation workflow
+├── EVALUATION.zh-CN.md
+├── assets/logo.png
+├── infer.py          # OpenAI-compatible inference example
+├── score.py          # Layered evaluation and reports
+├── common.py         # Shared data loading and output parsing
+├── requirements.txt
+└── prompts/          # Inference and judge prompts for both tracks
+```
 
 ## 🧭 Benchmark and response modes
 
