@@ -20,9 +20,22 @@
 
 ## ✨ Highlights
 
-- **1,632 tasks across 844 visual scenarios** spanning manipulation and navigation.
-- **Two evaluation tracks** use a single image for Snapshot and 2–8 ordered frames for Trajectory.
-- **Six response modes** cover proceeding, refusal, clarification, constrained execution, autonomous recovery, and human escalation.
+- 🌍 **Diverse visual scenarios** — 1,632 safety decisions across 844 visual scenarios, spanning manipulation and navigation in homes, hospitals, labs, and industrial settings.
+- 🎞️ **Two evaluation tracks** — Snapshot uses a single image to assess the current scene. Trajectory uses 2–8 ordered frames to track how risks change during execution.
+- 🧭 **Six response modes** — Evaluate whether a model proceeds, refuses, asks for clarification, applies safety constraints, recovers autonomously, or escalates to a human.
+- 🛠️ **Actionable safety decisions** — Models identify the source of risk and propose a safe, feasible next step. Clarification and constrained execution require additional mode-specific responses.
+- 📊 **Three levels of scoring** — L1 checks the response mode, L2 checks risk identification, and L3 checks actionable handling. Complete decision accuracy counts tasks that pass every applicable check.
+
+## 📚 Documentation
+
+| Section | Description |
+| --- | --- |
+| [Evaluation workflow](EVALUATION.md#evaluation-pipeline) | Follow a task from dataset input through model prediction and scoring. |
+| [Dataset download](https://huggingface.co/datasets/cuierfei/EmbodiSafety) | Access the Snapshot and Trajectory data on Hugging Face. |
+| [Input and output formats](EVALUATION.md#input) | See how tasks are represented and what fields model responses must contain. |
+| [Model inference](EVALUATION.md#inference) | Generate predictions with an OpenAI-compatible API or a model served via vLLM. |
+| [Scoring](EVALUATION.md#evaluation) | Run the judge and compute the benchmark metrics from saved predictions. |
+| [Prediction files](EVALUATION.md#prediction-files) | Locate the generated outputs and inspect their format. |
 
 ## 🧭 Benchmark and response modes
 
