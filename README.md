@@ -2,23 +2,27 @@
   <img src="assets/logo.png" alt="EmbodiSafety" width="900">
 </p>
 
-<p align="center">
-  <a href="https://embodisafety.github.io/">[🌐 Project Page]</a>
-  <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">[🤗 HF Dataset]</a>
-  [📄 Paper]
-</p>
+<h1 align="center">EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI</h1>
 
 <p align="center">
-  <a href="README.zh-CN.md">Switch to 中文</a>
+  <a href="https://embodisafety.github.io/">Project Page</a> |
+  <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">Dataset</a> |
+  <a href="EVALUATION.md">Evaluation Guide</a> |
+  <a href="#-leaderboard">Leaderboard</a> |
+  Paper
 </p>
+
+<p align="center"><a href="README.zh-CN.md">中文</a></p>
 
 <p align="center">
   <img src="assets/leaderboard.png" alt="EmbodiSafety leaderboard comparing Snapshot and Trajectory L3 accuracy" width="1000">
 </p>
 
-# ✨ EmbodiSafety
+## ✨ Highlights
 
-*EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI*
+- **1,632 tasks across 844 visual scenarios** spanning manipulation and navigation.
+- **Two evaluation tracks** use a single image for Snapshot and 2–8 ordered frames for Trajectory.
+- **Six response modes** cover proceeding, refusal, clarification, constrained execution, autonomous recovery, and human escalation.
 
 ## 🧭 Benchmark and response modes
 
@@ -49,7 +53,7 @@ Scenes span industrial workspaces, offices, homes, kitchens, shopping malls, hos
 
 The protocol uses GPT-5 as a reference-guided judge for L2 and L3. **Complete decision accuracy** is the percentage of tasks that pass every applicable check.
 
-### 2. Evaluation pipeline
+### 2. Quick evaluation
 
 Prepare the benchmark files under `data/`. The example below uses `gpt-5.5` as the model name served by an OpenAI-compatible endpoint and GPT-5 as the judge.
 

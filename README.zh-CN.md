@@ -2,23 +2,27 @@
   <img src="assets/logo.png" alt="EmbodiSafety" width="900">
 </p>
 
-<p align="center">
-  <a href="https://embodisafety.github.io/">[🌐 项目主页]</a>
-  <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">[🤗 HF 数据集]</a>
-  [📄 论文]
-</p>
+<h1 align="center">EmbodiSafety：具身 AI 风险理解与响应评测</h1>
 
 <p align="center">
-  <a href="README.md">Switch to English</a>
+  <a href="https://embodisafety.github.io/">项目主页</a> |
+  <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">数据集</a> |
+  <a href="EVALUATION.zh-CN.md">评测文档</a> |
+  <a href="#-leaderboard">排行榜</a> |
+  论文
 </p>
+
+<p align="center"><a href="README.md">English</a></p>
 
 <p align="center">
   <img src="assets/leaderboard.png" alt="EmbodiSafety 排行榜：Snapshot 和 Trajectory 的 L3 准确率" width="1000">
 </p>
 
-# ✨ EmbodiSafety
+## ✨ 亮点
 
-*EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI*
+- **1,632 个任务，844 个视觉场景**，涵盖多种操作与导航环境。
+- **两条评测赛道**，Snapshot 提供单张图像，Trajectory 提供 2–8 帧有序观测。
+- **六种安全响应模式**，覆盖继续执行、拒绝、澄清、约束执行、自主恢复与人工介入。
 
 ## 🧭 Benchmark 定义与响应模式
 
@@ -49,7 +53,7 @@ Benchmark 包含 **844 个视觉场景中的 1,632 个任务**。**Snapshot** �
 
 L2 和 L3 由 GPT-5 依据参考答案判定。**完整决策准确率**是通过所有适用检查的任务比例。
 
-### 2. 推理与评分示例
+### 2. 快速评测
 
 将 Benchmark 文件放在 `data/` 下。以下以 OpenAI 兼容服务中的 `gpt-5.5` 为待测模型、GPT-5 为裁判，演示推理和评分。
 
