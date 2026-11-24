@@ -25,33 +25,6 @@
 - 🛠️ **Actionable safety decisions** — Models identify the source of risk and propose a safe, feasible next step. Clarification and constrained execution require additional mode-specific responses.
 - 📊 **Three levels of scoring** — L1 checks the response mode, L2 checks risk identification, and L3 checks actionable handling. Complete decision accuracy counts tasks that pass every applicable check.
 
-## 📚 Documentation
-
-| Section | Description |
-| --- | --- |
-| [Evaluation workflow](EVALUATION.md#evaluation-pipeline) | Follow a task from dataset input through model prediction and scoring. |
-| [Dataset download](https://huggingface.co/datasets/cuierfei/EmbodiSafety) | Access the Snapshot and Trajectory data on Hugging Face. |
-| [Input and output formats](EVALUATION.md#input) | See how tasks are represented and what fields model responses must contain. |
-| [Model inference](EVALUATION.md#inference) | Generate predictions with an OpenAI-compatible API or a model served via vLLM. |
-| [Scoring](EVALUATION.md#evaluation) | Run the judge and compute the benchmark metrics from saved predictions. |
-| [Prediction files](EVALUATION.md#prediction-files) | Locate the generated outputs and inspect their format. |
-
-## 🗂️ Repository Structure
-
-```text
-embodisafety/
-├── README.md
-├── README.zh-CN.md
-├── EVALUATION.md      # Input/output format and evaluation workflow
-├── EVALUATION.zh-CN.md
-├── assets/logo.png
-├── infer.py          # OpenAI-compatible inference example
-├── score.py          # Layered evaluation and reports
-├── common.py         # Shared data loading and output parsing
-├── requirements.txt
-└── prompts/          # Inference and judge prompts for both tracks
-```
-
 ## 🧭 Benchmark and response modes
 
 EmbodiSafety evaluates whether embodied AI models can recognize physical risks and choose a safe next step. Each task provides a user instruction, visual observations, and optional context. The model predicts a response mode and an immediate action, identifies the risk source, and explains its decision.
@@ -70,6 +43,17 @@ EmbodiSafety evaluates whether embodied AI models can recognize physical risks a
 The benchmark contains **1,632 tasks across 844 visual scenarios**. **Snapshot** includes 1,092 single-image tasks and uses the first four modes. **Trajectory** includes 540 tasks with 2–8 ordered frames and uses all six modes. Trajectory tasks also annotate execution progress and recoverability.
 
 Scenes span industrial workspaces, offices, homes, kitchens, shopping malls, hospitals, warehouses, laboratories, public spaces, and outdoor settings. Manipulation and navigation tasks cover risks such as obstacles, collisions, spills, electrical equipment, fragile objects, ambiguous instructions, and deliberate misuse.
+
+## 📚 Documentation
+
+| Section | Description |
+| --- | --- |
+| [Evaluation workflow](EVALUATION.md#evaluation-pipeline) | Follow a task from dataset input through model prediction and scoring. |
+| [Dataset download](https://huggingface.co/datasets/cuierfei/EmbodiSafety) | Access the Snapshot and Trajectory data on Hugging Face. |
+| [Input and output formats](EVALUATION.md#input) | See how tasks are represented and what fields model responses must contain. |
+| [Model inference](EVALUATION.md#inference) | Generate predictions with an OpenAI-compatible API or a model served via vLLM. |
+| [Scoring](EVALUATION.md#evaluation) | Run the judge and compute the benchmark metrics from saved predictions. |
+| [Prediction files](EVALUATION.md#prediction-files) | Locate the generated outputs and inspect their format. |
 
 ## 📊 Evaluation protocol
 
@@ -101,6 +85,22 @@ python score.py --data-dir data --tag gpt-5.5
 ```
 
 For detailed model inference and evaluation instructions, see the [inference and evaluation guide](EVALUATION.md).
+
+## 🗂️ Repository Structure
+
+```text
+embodisafety/
+├── README.md
+├── README.zh-CN.md
+├── EVALUATION.md      # Input/output format and evaluation workflow
+├── EVALUATION.zh-CN.md
+├── assets/logo.png
+├── infer.py          # OpenAI-compatible inference example
+├── score.py          # Layered evaluation and reports
+├── common.py         # Shared data loading and output parsing
+├── requirements.txt
+└── prompts/          # Inference and judge prompts for both tracks
+```
 
 ## 🏆 Leaderboard
 

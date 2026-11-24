@@ -25,33 +25,6 @@
 - 🛠️ **可执行的安全处置** — 模型需要识别风险来源并给出安全可行的下一步。澄清和约束执行还需要给出对应的问题或约束条件。
 - 📊 **三级评分** — L1 检查响应模式，L2 检查风险识别，L3 检查安全处置。完整决策准确率统计通过所有适用检查的任务比例。
 
-## 📚 文档导航
-
-| 章节 | 说明 |
-| --- | --- |
-| [评测流程](EVALUATION.zh-CN.md#评测-pipeline) | 从数据输入到模型预测和评分，了解完整流程。 |
-| [数据集下载](https://huggingface.co/datasets/cuierfei/EmbodiSafety) | 在 Hugging Face 获取 Snapshot 和 Trajectory 数据。 |
-| [输入与输出格式](EVALUATION.zh-CN.md#输入格式) | 查看任务的输入结构和模型响应所需字段。 |
-| [模型推理](EVALUATION.zh-CN.md#推理) | 使用 OpenAI 兼容 API 或通过 vLLM 部署的模型生成预测。 |
-| [评分](EVALUATION.zh-CN.md#评分) | 对已保存的预测运行裁判模型并计算评测指标。 |
-| [预测文件](EVALUATION.zh-CN.md#预测文件) | 查看预测结果的保存位置与文件格式。 |
-
-## 🗂️ 仓库结构
-
-```text
-embodisafety/
-├── README.md
-├── README.zh-CN.md
-├── EVALUATION.md
-├── EVALUATION.zh-CN.md
-├── assets/logo.png
-├── infer.py
-├── score.py
-├── common.py
-├── requirements.txt
-└── prompts/
-```
-
 ## 🧭 Benchmark 定义与响应模式
 
 EmbodiSafety 评估具身 AI 模型能否识别物理风险并选择安全的下一步行动。每个任务提供用户指令、视觉观测和可选的上下文。模型需要选择响应模式、给出下一步行动、识别风险来源并解释决策。
@@ -70,6 +43,17 @@ EmbodiSafety 评估具身 AI 模型能否识别物理风险并选择安全的下
 Benchmark 包含 **844 个视觉场景中的 1,632 个任务**。**Snapshot** 包含 1,092 个单图任务，使用表中的前四种模式。**Trajectory** 包含 540 个任务，每个任务提供 2–8 帧有序图像，使用全部六种模式，并标注执行进度和可恢复性。
 
 场景涵盖工业工作区、办公室、住宅、厨房、商场、医院、仓库、实验室、公共空间和户外环境。操作与导航任务涉及障碍物、碰撞、液体洒漏、电气设备、易碎物品、指令歧义和蓄意误用等风险。
+
+## 📚 文档导航
+
+| 章节 | 说明 |
+| --- | --- |
+| [评测流程](EVALUATION.zh-CN.md#评测-pipeline) | 从数据输入到模型预测和评分，了解完整流程。 |
+| [数据集下载](https://huggingface.co/datasets/cuierfei/EmbodiSafety) | 在 Hugging Face 获取 Snapshot 和 Trajectory 数据。 |
+| [输入与输出格式](EVALUATION.zh-CN.md#输入格式) | 查看任务的输入结构和模型响应所需字段。 |
+| [模型推理](EVALUATION.zh-CN.md#推理) | 使用 OpenAI 兼容 API 或通过 vLLM 部署的模型生成预测。 |
+| [评分](EVALUATION.zh-CN.md#评分) | 对已保存的预测运行裁判模型并计算评测指标。 |
+| [预测文件](EVALUATION.zh-CN.md#预测文件) | 查看预测结果的保存位置与文件格式。 |
 
 ## 📊 评测流程
 
@@ -101,6 +85,22 @@ python score.py --data-dir data --tag gpt-5.5
 ```
 
 详细模型推理和评测请参考[推理与评测文档](EVALUATION.zh-CN.md)。
+
+## 🗂️ 仓库结构
+
+```text
+embodisafety/
+├── README.md
+├── README.zh-CN.md
+├── EVALUATION.md
+├── EVALUATION.zh-CN.md
+├── assets/logo.png
+├── infer.py
+├── score.py
+├── common.py
+├── requirements.txt
+└── prompts/
+```
 
 ## 🏆 Leaderboard
 
