@@ -4,13 +4,13 @@
 
 <h1 align="center">EmbodiSafety：具身 AI 风险理解与响应评测</h1>
 
-<p align="center">
+<h2 align="center">
   <a href="https://embodisafety.github.io/">项目主页</a> |
   <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">数据集</a> |
   <a href="EVALUATION.zh-CN.md">评测文档</a> |
   <a href="#-leaderboard">排行榜</a> |
   论文
-</p>
+</h2>
 
 <p align="center"><a href="README.md">English</a></p>
 

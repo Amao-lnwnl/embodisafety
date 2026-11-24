@@ -4,13 +4,13 @@
 
 <h1 align="center">EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI</h1>
 
-<p align="center">
+<h2 align="center">
   <a href="https://embodisafety.github.io/">Project Page</a> |
   <a href="https://huggingface.co/datasets/cuierfei/EmbodiSafety">Dataset</a> |
   <a href="EVALUATION.md">Evaluation Guide</a> |
   <a href="#-leaderboard">Leaderboard</a> |
   Paper
-</p>
+</h2>
 
 <p align="center"><a href="README.zh-CN.md">中文</a></p>
 
